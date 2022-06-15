@@ -336,3 +336,8 @@ ul {
 .nosotros__informacion > p {
     margin: 30px 0; 
 }
+
+.nosotros__imagen {
+    max-width: 100%;
+    border-bottom-right-radius: 30px;
+}
