@@ -261,6 +261,7 @@ ul {
     padding-top: 150px;
 }
 .tradiciones__informacion {
+    width: 100%;
     margin-top: 30px;
     height: 500px;
     overflow: auto;
@@ -268,7 +269,6 @@ ul {
 
 @media (min-width: 768px) {
     .tradiciones__informacion {
-        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-around;
