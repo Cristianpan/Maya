@@ -5,30 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Kusamil</title>
+    <link rel="icon" href="/img/icono.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="preload" href="/styles/node_modules/normalize.css/normalize.css" as="style">
     <link rel="stylesheet" href="/styles/node_modules/normalize.css/normalize.css">
+    <link rel="preload" href="/styles/style.css" as="style">
     <link rel="stylesheet" href="/styles/style.css">
-    <title>Kusamil</title>
 </head>
 
 <body>
-    <nav class="navegacion">
-        <a href="/" class="navegacion__logo">Kusamil</a>
-        <input type="checkbox" id="activado">
-        <label for="activado" class="navegacion__button">
-            <div class="line"></div>
-            <div class="line"></div>
-        </label>
-        <div class="navegacion__fondo"></div>
-        <ul class="navegacion__ul">
-            <li class="navegacion__li"><a href="#inicio">Inicio</a></li>
-            <li class="navegacion__li"><a href="#cultura">Cultura Maya</a></li>
-            <li class="navegacion__li"><a href="#tradiciones">Tradiciones</a></li>
-            <li class="navegacion__li"><a href="#nosotros">Nosotros</a></li>
-        </ul>
-    </nav>
+    <header class="header">
+        <nav class="navegacion">
+            <a href="/" class="navegacion__logo">Kusamil</a>
+            <input type="checkbox" id="activado">
+            <label for="activado" class="navegacion__button">
+                <div class="line"></div>
+                <div class="line"></div>
+            </label>
+            <div class="navegacion__fondo"></div>
+            <ul class="navegacion__ul">
+                <li class="navegacion__li"><a href="#inicio">Inicio</a></li>
+                <li class="navegacion__li"><a href="#cultura">Cultura Maya</a></li>
+                <li class="navegacion__li"><a href="#tradiciones">Tradiciones</a></li>
+                <li class="navegacion__li"><a href="#nosotros">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <section class="contenedor inicio" id="inicio">
         <div class="inicio__informacion">
@@ -67,17 +72,17 @@
             <div>
                 <h3>Hanal pixan</h3>
                 <p>El paso de la vida a la muerte era difícil y delicado. Se creía que las almas de los muertos no abandonaban la tierra inmediatamente después del deceso...</p>
-                <a href="">Leer Más</a>
+                <a href="#">Leer Más</a>
             </div>
             <div>
                 <h3>Jéets Méek'</h3>
                 <p>Se realiza para indicar que el bebé se encuentra apto para constituirse como miembro de la comunidad. Deberá ser tratado y socializado según su sexo...</p>
-                <a href="">Leer Más</a>
+                <a href="#">Leer Más</a>
             </div>
             <div>
                 <h3>U pool k’éeken </h3>
                 <p>De la casa del jefe de los organizadores, sacaban una procesión de la cabeza del cerdo para llevarla a la casa principal como cortesía a los amos... </p>
-                <a href="">Leer Más</a>
+                <a href="#">Leer Más</a>
             </div>
         </div>
     </section>
@@ -89,7 +94,6 @@
         </div>
         <img class="nosotros__imagen" src="/img/nosotros.png" alt="nosotros">           
     </section>
-
 </body>
 
 </html>
