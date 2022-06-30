@@ -68,7 +68,7 @@ function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     let top = rect.top; 
     top = Math.floor(top); 
-    return(top <= 0 && top > -300)
+    return(top <= 70 && top > -300)
 }
 
 
