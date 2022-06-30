@@ -64,6 +64,8 @@ ul {
     top: 0;
     padding: 0 20px;
     z-index: 1;
+    background-color: white;
+    transition: background-color 0.1s;
 }
 
 
@@ -87,10 +89,6 @@ ul {
     transition: border-button 0.2s, font-size 0.2s;
 }
 
-#activado {
-    display: none;
-}
-
 .navegacion__button .line{
     background-color: var(--links);
     width: 35px;
@@ -103,6 +101,10 @@ ul {
 
 .navegacion__button, .navegacion__ul {
     z-index: 1;
+}
+
+.navegacion__button {
+    cursor: pointer;
 }
 
 @media (min-width: 768px){
@@ -125,34 +127,8 @@ ul {
 
 @media (max-width: 768px){
     .navegacion__fondo {
-        position: absolute;
-        background: inherit;
-        transition: all 0.2s;
-    }
-
-    .navegacion__ul {
         display: none;
         position: absolute;
-    }
-
-    .navegacion__li {
-        text-align: end; 
-        padding: 15px 0;
-        opacity: 0;
-        transition: opacity 0.3s, transform 0.3s; 
-    }
-
-    #activado:checked ~ .navegacion__ul {
-        display: block;
-        top: 70px; 
-        right: 20px;
-    }
-
-    #activado:checked ~ .navegacion__ul .navegacion__li {
-        opacity: 1;
-    }
-
-    #activado:checked ~ .navegacion__fondo {
         width: 100vw;
         height: 100vh;
         top: 0; 
@@ -161,16 +137,17 @@ ul {
         backdrop-filter: blur(5px);
     }
 
-    #activado:checked ~ .navegacion__button .line:nth-child(1){
-        transform: translateY(6.5px) rotate(45deg); 
+    .navegacion__ul {
+        display: none;
+        position: absolute;
+        top: 70px; 
+        right: 20px;
     }
 
-   #activado:checked ~ .navegacion__button .line:nth-child(2){
-        transform: translateY(-6.5px) rotate(-45deg); 
-    }
-
-    #activado:checked ~ .navegacion__button .line{
-        background-color: var(--primary);
+    .navegacion__li {
+        text-align: end; 
+        padding: 15px 0;
+        transition: transform 0.3s; 
     }
 
     .navegacion__li:hover{
@@ -257,6 +234,7 @@ ul {
 
 /* tradiciones */
 
+
 .fondo {
     z-index: -1;
     width: 100%;
@@ -265,6 +243,7 @@ ul {
     left: 0;
     background-color: #B7AFEE;
 }
+
 .tradiciones > h1{
     text-align: center;
     padding-top: 150px;
@@ -272,7 +251,7 @@ ul {
 .tradiciones__informacion {
     width: 100%;
     margin-top: 30px;
-    height: 500px;
+    height: 380px;
     overflow: auto;
 }
 
@@ -280,8 +259,8 @@ ul {
     .tradiciones__informacion {
         display: flex;
         align-items: center;
+        height: 500px;
         gap: 50px;
-        overflow: auto;
         margin-top: 0;
     }
 }
