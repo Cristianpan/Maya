@@ -1,73 +1,76 @@
-const ul = document.querySelector(".navegacion__ul"); 
-const header = document.querySelector(".header"); 
+const ul = document.querySelector(".navegacion__ul");
+const header = document.querySelector(".header");
 const button = document.querySelector(".navegacion__button");
-const buttonLine = document.querySelectorAll(".navegacion__button .line")  
-const fondo = document.querySelector(".navegacion__fondo"); 
-const tradiciones = document.querySelector(".tradiciones"); 
+const buttonLine = document.querySelectorAll(".navegacion__button .line")
+const fondo = document.querySelector(".navegacion__fondo");
+const tradiciones = document.querySelector(".tradiciones");
 let tiempo = 500;
-let buttonIsActivado = false; 
+let buttonIsActivado = false;
 
 
 window.addEventListener("resize",()=> {
-    if (window.matchMedia("(min-width: 768px)").matches) {
-        modificiarNav("flex",);    
-        buttonIsActivado = false; 
-        activarButton(buttonIsActivado); 
-    } else {
-        modificiarNav();
-    }
+    buttonIsActivado = false; 
+    modificiarNav(buttonIsActivado);
+    activarButton(buttonIsActivado);
 });
 
-window.addEventListener("scroll", ()=> { 
+window.addEventListener("scroll", ()=> {
     if(isInViewport(tradiciones)){
-        header.style.background = "#B7AFEE"; 
+        header.style.background = "#B7AFEE";
     } else {
-        header.style.background = "white";
+        header.removeAttribute("style")
     }
-}); 
+});
 
 document.addEventListener("click", (event) => {
     const enlace = event.target;
     if (window.innerWidth < 768){
         if (enlace.matches('.navegacion__enlace')) {
-            modificiarNav(); 
+            modificiarNav();
             buttonIsActivado = false;
-            activarButton(buttonIsActivado); 
+            activarButton(buttonIsActivado);
         }
     }
 });
 
 button.addEventListener("click", ()=>{
+
     if (buttonIsActivado == false){
-        buttonIsActivado = true; 
-        modificiarNav("block", "block");  
+        buttonIsActivado = true;
+        console.log(buttonIsActivado);
+        modificiarNav(buttonIsActivado);
         activarButton(buttonIsActivado);
     } else {
-        buttonIsActivado = false; 
-        modificiarNav(); 
-        activarButton(buttonIsActivado); 
+        buttonIsActivado = false;
+        modificiarNav(buttonIsActivado);
+        activarButton(buttonIsActivado);
     }
-}); 
+});
 
 function activarButton(activado){
     if (activado == true){
         buttonLine[0].style.transform = "translateY(6.5px) rotate(45deg)"
-        buttonLine[1].style.transform = "translateY(-6.5px) rotate(-45deg)"; 
+        buttonLine[1].style.transform = "translateY(-6.5px) rotate(-45deg)";
     } else {
-        buttonLine[0].style.transform = "none"; 
-        buttonLine[1].style.transform = "none"; 
+        buttonLine[0].removeAttribute("style");
+        buttonLine[1].removeAttribute("style");
     }
 }
 
-function modificiarNav(displayUl = "none", displayFondo = "none"){
-    ul.style.display = displayUl; 
-    fondo.style.display = displayFondo; 
+function modificiarNav(isActivado){
+    if (isActivado == true){
+        ul.style.display = "block";
+        fondo.style.display = "block";
+    } else {
+        ul.removeAttribute("style");
+        fondo.removeAttribute("style");
+    }
 }
 
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
-    let top = rect.top; 
-    top = Math.floor(top); 
+    let top = rect.top;
+    top = Math.floor(top);
     return(top <= 70 && top > -300)
 }
 
