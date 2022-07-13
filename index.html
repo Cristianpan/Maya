@@ -21,17 +21,21 @@
         <nav class="navegacion">
             <a href="/" class="navegacion__logo">Kusamil</a>
 
-            <div class="navegacion__button">
+            <div class="navegacion__button" onclick="activarBotton()">
                 <div class="line"></div>
                 <div class="line"></div>
             </div>
 
             <div class="navegacion__fondo"></div>
             <ul class="navegacion__ul">
-                <li class="navegacion__li"><a class="navegacion__enlace" href="#inicio">Inicio</a></li>
-                <li class="navegacion__li"><a class="navegacion__enlace" href="#cultura">Cultura Maya</a></li>
-                <li class="navegacion__li"><a class="navegacion__enlace" href="#tradiciones">Tradiciones</a></li>
-                <li class="navegacion__li"><a class="navegacion__enlace" href="#nosotros">Nosotros</a></li>
+                <li class="navegacion__li"><a class="navegacion__enlace" onclick="ocultarEnlaces()"
+                        href="#inicio">Inicio</a></li>
+                <li class="navegacion__li"><a class="navegacion__enlace" onclick="ocultarEnlaces()"
+                        href="#cultura">Cultura Maya</a></li>
+                <li class="navegacion__li"><a class="navegacion__enlace" onclick="ocultarEnlaces()"
+                        href="#tradiciones">Tradiciones</a></li>
+                <li class="navegacion__li"><a class="navegacion__enlace" onclick="ocultarEnlaces()"
+                        href="#nosotros">Nosotros</a></li>
             </ul>
         </nav>
     </header>
@@ -69,25 +73,57 @@
     <section class="contenedor tradiciones" id="tradiciones">
         <div class="fondo"></div>
         <h1>¡Conoce nuestras tradiciones!</h1>
-        <div class="tradiciones__informacion">
-            <div>
-                <h3>Hanal pixan</h3>
-                <p>El paso de la vida a la muerte era difícil y delicado. Se creía que las almas de
-                    los muertos no abandonaban la tierra inmediatamente después del deceso...</p>
-                <a href="#">Leer Más</a>
+        <div class="tradiciones__container">
+            <div class="tradiciones__informacion">
+                <div class="tradiciones__target">
+                    <h3>Hanal pixan</h3>
+                    <p>El paso de la vida a la muerte era difícil y delicado. Se creía que las almas de
+                        los muertos no abandonaban la tierra inmediatamente después del deceso...</p>
+                    <a href="#">Leer Más</a>
+                </div>
+                <div class="tradiciones__target">
+                    <h3>Jéets Méek'</h3>
+                    <p>Se realiza para indicar que el bebé se encuentra apto para constituirse como
+                        miembro de la comunidad. Deberá ser tratado y socializado según su sexo...</p>
+                    <a href="#">Leer Más</a>
+                </div>
+                <div class="tradiciones__target">
+                    <h3>U pool k’éeken </h3>
+                    <p>De la casa del jefe de los organizadores, sacaban una procesión de la cabeza del
+                        cerdo para llevarla a la casa principal como cortesía a los amos... </p>
+                    <a href="#">Leer Más</a>
+                </div>
+                <div class="tradiciones__target">
+                    <h3>Nam eu</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere posuere
+                        consequat. Fusce posuere condimentum cursus. Proin at malesuada nisl... </p>
+                    <a href="#">Leer Más</a>
+                </div>
+                <div class="tradiciones__target">
+                    <h3>Fusce mi</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere posuere
+                        consequat. Fusce posuere condimentum cursus. Proin at malesuada nisl... </p>
+                    <a href="#">Leer Más</a>
+                </div>
+                <div class="tradiciones__target">
+                    <h3>Maecenas odio</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere posuere
+                        consequat. Fusce posuere condimentum cursus. Proin at malesuada nisl... </p>
+                    <a href="#">Leer Más</a>
+                </div>
             </div>
-            <div>
-                <h3>Jéets Méek'</h3>
-                <p>Se realiza para indicar que el bebé se encuentra apto para constituirse como
-                    miembro de la comunidad. Deberá ser tratado y socializado según su sexo...</p>
-                <a href="#">Leer Más</a>
-            </div>
-            <div>
-                <h3>U pool k’éeken </h3>
-                <p>De la casa del jefe de los organizadores, sacaban una procesión de la cabeza del
-                    cerdo para llevarla a la casa principal como cortesía a los amos... </p>
-                <a href="#">Leer Más</a>
-            </div>
+        </div>
+        <div class="botones">
+            <svg class="scroll-button" onclick="scrollLeftNx()" id="bMore" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevrons-left" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#130F40" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <polyline points="11 7 6 12 11 17" />
+                <polyline points="17 7 12 12 17 17" />
+            </svg>
+            <svg class="scroll-button" onclick="scrollRightNx()" id="bLess" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevrons-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#130F40" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <polyline points="7 7 12 12 7 17" />
+                <polyline points="13 7 18 12 13 17" />
+            </svg>
         </div>
     </section>
 
@@ -102,6 +138,7 @@
         <img class="nosotros__imagen" src="/img/nosotros.png" alt="nosotros">
     </section>
     <script src="/js/nav.js"></script>
+    <script src="/js/botonSlide.js"></script>
 </body>
 
 </html>
